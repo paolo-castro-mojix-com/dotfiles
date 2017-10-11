@@ -1,0 +1,16 @@
+[user]
+	email = paolocastro.deb@gmail.com.com
+	name = Paolo Castro
+[core]
+	excludesfile = /home/paolo/.gitignore_global
+	editor = emacsclient -t
+[alias]
+  tree = log --graph --pretty=oneline --abbrev-commit
+[push]
+	default = matching
+[merge]
+	tool = ediff
+[mergetool "ediff"]
+	cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+[credential]
+	helper = store
